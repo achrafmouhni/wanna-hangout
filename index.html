@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Do you wanna go out with me?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #noButton {
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pink-200 h-screen w-full text-center overflow-hidden" id="screen">
+        <div class="my-44">
+            <h1 class="text-white text-4xl font-mono font-bold">Do you wanna go out with me?</h1>
+            <img class="mx-auto" src="assets/giphy.gif"/>
+            <div>
+                <button id="yesButton" onclick="nextPage()" class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-5 border border-yellow-700 hover:border-transparent rounded">Yes</button>
+                <button id="noButton" class="transition-transform bg-transparent  text-yellow-700 font-semibold  py-2 px-5 border border-yellow-700 t rounded"
+                onclick="moveButton()" onmouseover="moveButton()">No</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const noButton = document.getElementById('noButton');
+        
+
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth/4);
+            const y = Math.random() * (window.innerHeight/4 );
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    </script>
+</body>
+</html>
